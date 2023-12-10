@@ -1,4 +1,3 @@
-from django.test import TestCase
 from rest_framework.test import APIClient
 from rest_framework.test import APITestCase
 
@@ -9,12 +8,7 @@ from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 
 from base.tests import BaseTestCase 
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.keys import Keys
-from .views import CustomUserCreationForm
-
 
 from base import mods
 

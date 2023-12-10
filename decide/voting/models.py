@@ -1,12 +1,24 @@
+import binascii
 from django.db import models
 from django.db.models import JSONField
 
 from base import mods
 from base.models import Auth, Key
+import json
 
 
 class Question(models.Model):
     desc = models.TextField()
+    TYPES = [
+            ('C', 'Classic question'),
+            ('Y', 'Yes/No question'),
+            ('M', 'Multiple choice question'),
+            ('T', 'Text question')
+            ]
+    type = models.CharField(max_length=1, choices=TYPES, default='C')
+
+    def save(self):
+        super().save()
 
     def __str__(self):
         return self.desc
@@ -20,11 +32,31 @@ class QuestionOption(models.Model):
     def save(self):
         if not self.number:
             self.number = self.question.options.count() + 2
-        return super().save()
+        if self.question.type in ['C','M']:
+            return super().save()
 
     def __str__(self):
-        return '{} ({})'.format(self.option, self.number)
+        if self.question.type in ['C','M']:
+            return '{} ({})'.format(self.option, self.number)
+        else:
+            return 'You cannot create an option for a non-Classic or multiple choice question'
 
+class QuestionOptionYesNo(models.Model):
+    question = models.ForeignKey(Question, related_name='yesno_options', on_delete=models.CASCADE)
+    number = models.PositiveIntegerField(blank=True, null=True)
+    option = models.TextField()
+
+    def save(self):
+        if not self.number:
+            self.number = self.question.options.count() + 2
+        if self.question.type == 'Y':
+            return super().save()
+
+    def __str__(self):
+        if self.question.type == 'Y':
+            return '{} - {} ({}) '.format(self.question,self.option, self.number)
+        else:
+            return 'You cannot create a Yes/No option for a non-Yes/No question'
 
 class Voting(models.Model):
     name = models.CharField(max_length=200)
@@ -84,6 +116,7 @@ class Voting(models.Model):
         auth = self.auths.first()
         shuffle_url = "/shuffle/{}/".format(self.id)
         decrypt_url = "/decrypt/{}/".format(self.id)
+        decrypt_aes_url = "/decrypt_aes/{}/".format(self.id)
         auths = [{"name": a.name, "url": a.url} for a in self.auths.all()]
 
         # first, we do the shuffle
@@ -102,11 +135,35 @@ class Voting(models.Model):
         if response.status_code != 200:
             # TODO: manage error
             pass
-
-        self.tally = response.json()
-        self.save()
-
+        
+        def decimal_to_ascii(decimal_string):
+            decimal_string = str(decimal_string).replace('[', '').replace(']', '')
+            try:
+                # Convert the decimal string to a list of ASCII characters with length 4
+                while len(decimal_string) % 3 != 0:
+                    decimal_string = '0' + decimal_string
+                ascii_string = ''
+                for i in range(0, len(decimal_string), 3):
+                    ascii_char = decimal_string[i:i+3]
+                    ascii_string += chr(int(ascii_char))
+                return ascii_string
+            except ValueError:
+                # Handle the case where the input is not a valid decimal string
+                return "Invalid decimal string"
+        
+        if self.question.type == 'T':
+            data = {"msgs": response.json()}
+            for key, values in data.items():
+                data[key] = [decimal_to_ascii(v) for v in values]
+            self.tally = data
+            self.save()
+        else:
+            self.tally = response.json()
+            self.save()
+            
         self.do_postproc()
+    
+        
 
     def do_postproc(self):
         tally = self.tally
@@ -123,8 +180,32 @@ class Voting(models.Model):
                 'number': opt.number,
                 'votes': votes
             })
+        # yes/no postproc
+        if self.question.type == 'Y':
+            yesno_options = self.question.yesno_options.all()
+            for opt in yesno_options:
+                if isinstance(tally, list):
+                    votes = tally.count(opt.number)
+                else:
+                    votes = 0
+                opts.append({
+                    'option': opt.option,
+                    'number': opt.number,
+                    'votes': votes
+                })
+            data = { 'type': 'IDENTITY', 'options': opts }
+ 
+        #postproc for text questions
+        elif self.question.type == 'T':
+            text_votes = []
+            for msg, votes in tally.items():
+                for vote in votes:
+                    text_votes.append({'vote': vote})
 
-        data = { 'type': 'IDENTITY', 'options': opts }
+            data = {'type': 'TEXT', 'text_votes': text_votes}
+        else:
+            data = { 'type': 'IDENTITY', 'options': opts }
+            
         postp = mods.post('postproc', json=data)
 
         self.postproc = postp

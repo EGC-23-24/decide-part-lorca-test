@@ -43,6 +43,9 @@ class VotingView(generics.ListCreateAPIView):
             opt.save()
         voting = Voting(name=request.data.get('name'), desc=request.data.get('desc'),
                 question=question, future_stop=request.data.get('future_stop'))
+        end_date = request.data.get('end_date')
+        start_date = request.data.get('start_date')
+
         voting.save()
 
         auth, _ = Auth.objects.get_or_create(url=settings.BASEURL,
@@ -104,3 +107,5 @@ class VotingUpdate(generics.RetrieveUpdateDestroyAPIView):
             msg = 'Action not found, try with start, stop or tally'
             st = status.HTTP_400_BAD_REQUEST
         return Response(msg, status=st)
+    
+
