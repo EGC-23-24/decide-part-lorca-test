@@ -52,20 +52,6 @@ jobs:
         pip install -r requirements.txt
         pip install codacy-coverage
         cp decide/local_settings.gactions.py decide/local_settings.py
-    - name: Install Redis and Start Server
-      run: |
-        sudo apt-get install redis-server
-        redis-server --daemonize yes
-    - name: Start Celery Worker
-      run: |
-        cd decide
-        python -m celery -A decide.celery worker -D --loglevel=info
-    - name: Run all tests
-      if: ${{ github.base_ref == 'main' }}
-      run: |
-        cd decide
-        coverage run --branch --source=. ./manage.py test booth -v 2--keepdb 
-        coverage xml 
     - name: Run tests
       if: ${{ github.base_ref == 'develop' }}
       run: |
