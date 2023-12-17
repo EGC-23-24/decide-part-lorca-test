@@ -16,7 +16,6 @@ jobs:
         id: create-issue
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-        
         run: |
           issue_title="Error in CI ${{ github.event.workflow.name }} - Decide"
           issue_body="The workflow '${{ github.event.workflow.name }}' has failed and the PR cannot be merged. Don't forget to add the group label and assign an assignee."
