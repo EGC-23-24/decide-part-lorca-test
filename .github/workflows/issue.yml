@@ -5,8 +5,8 @@ on:
   workflow_run:
     workflows: ["Decide-Lorca application"]
     types: [completed]
-  permissions:
-    issues: write
+permissions:
+  issues: write
     
 jobs:
   create-issue-on-failure:
