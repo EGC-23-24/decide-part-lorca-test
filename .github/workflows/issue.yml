@@ -3,19 +3,20 @@ run-name: Creating issue for ${{ github.actor }}
 
 on:
   workflow_run:
-    workflows: ["django.yml"]
+    workflows: ["Decide-Lorca application"]
     types: [completed]
-
+  permissions:
+    issues: write
+    
 jobs:
   create-issue-on-failure:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion != 'success' }}
     steps:
       - name: Create Issue on Workflow Failure
         id: create-issue
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-
+        if: ${{ github.event.workflow_run.conclusion != 'success' }}
         run: |
           issue_title="Error in CI ${{ github.event.workflow.name }} - Decide"
           issue_body="The workflow '${{ github.event.workflow.name }}' has failed and the PR cannot be merged. Don't forget to add the group label and assign an assignee."
