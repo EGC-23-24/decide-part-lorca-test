@@ -1,4 +1,5 @@
 name: Create Issue on Workflow Failure
+run-name: Creating issue for ${{ github.actor }} 
 
 on:
   workflow_run:
@@ -9,7 +10,6 @@ jobs:
   create-issue-on-failure:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion != 'success' }}
-
     steps:
       - name: Create Issue on Workflow Failure
         id: create-issue
