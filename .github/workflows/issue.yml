@@ -3,7 +3,7 @@ run-name: Creating issue for ${{ github.actor }}
 
 on:
   workflow_run:
-    workflows: ["Decide-Lorca application"]
+    workflows: ["django.yml"]
     types: [completed]
 
 jobs:
