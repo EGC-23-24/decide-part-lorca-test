@@ -64,7 +64,7 @@ jobs:
       if: ${{ github.base_ref == 'main' }}
       run: |
         cd decide
-        coverage run --branch --source=. ./manage.py test  --keepdb 
+        coverage run --branch --source=. ./manage.py test booth -v 2--keepdb 
         coverage xml 
     - name: Run tests
       if: ${{ github.base_ref == 'develop' }}

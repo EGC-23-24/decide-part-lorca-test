@@ -21,4 +21,7 @@ class BoothTestCase(BaseTestCase):
         response = self.client.get('/booth/10000')
         self.assertEqual(response.status_code, 301)
 
+    def test_that_always_fail(self):
+        self.assertEquals(1,2)
+
        
