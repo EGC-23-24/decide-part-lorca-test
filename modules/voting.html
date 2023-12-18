@@ -1,0 +1,1950 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Voting Module &#8212; decide-part-lorca</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modules/voting';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Memes collection" href="../memes.html" />
+    <link rel="prev" title="Visualizer Module" href="visualizer.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">decide-part-lorca</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Welcome to decide’s documentation!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Decide modules</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="booth.html">Booth Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="census.html">Census Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth.html">Auth Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mixnet.html">Mixnet Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="postproc.html">Postproc Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="store.html">Store Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualizer.html">Visualizer Module</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Voting Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../memes.html">Memes collection</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/EGC-23-24/decide-part-lorca" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/EGC-23-24/decide-part-lorca/edit/main/modules/voting.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/EGC-23-24/decide-part-lorca/issues/new?title=Issue%20on%20page%20%2Fmodules/voting.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/modules/voting.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Voting Module</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-voting.admin">admin.py</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.QuestionAdmin"><code class="docutils literal notranslate"><span class="pre">QuestionAdmin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.QuestionAdmin.list_display"><code class="docutils literal notranslate"><span class="pre">QuestionAdmin.list_display</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.QuestionAdmin.media"><code class="docutils literal notranslate"><span class="pre">QuestionAdmin.media</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.QuestionOptionYesNoAdmin"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNoAdmin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.QuestionOptionYesNoAdmin.list_display"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNoAdmin.list_display</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.QuestionOptionYesNoAdmin.media"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNoAdmin.media</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.VotingAdmin"><code class="docutils literal notranslate"><span class="pre">VotingAdmin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.VotingAdmin.actions"><code class="docutils literal notranslate"><span class="pre">VotingAdmin.actions</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.VotingAdmin.date_hierarchy"><code class="docutils literal notranslate"><span class="pre">VotingAdmin.date_hierarchy</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.VotingAdmin.list_display"><code class="docutils literal notranslate"><span class="pre">VotingAdmin.list_display</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.VotingAdmin.list_filter"><code class="docutils literal notranslate"><span class="pre">VotingAdmin.list_filter</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.VotingAdmin.media"><code class="docutils literal notranslate"><span class="pre">VotingAdmin.media</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.VotingAdmin.readonly_fields"><code class="docutils literal notranslate"><span class="pre">VotingAdmin.readonly_fields</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.VotingAdmin.search_fields"><code class="docutils literal notranslate"><span class="pre">VotingAdmin.search_fields</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.start"><code class="docutils literal notranslate"><span class="pre">start()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.stop"><code class="docutils literal notranslate"><span class="pre">stop()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.tally"><code class="docutils literal notranslate"><span class="pre">tally()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-voting.models">models.py</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question"><code class="docutils literal notranslate"><span class="pre">Question</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Question.DoesNotExist</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Question.MultipleObjectsReturned</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.TYPES"><code class="docutils literal notranslate"><span class="pre">Question.TYPES</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.desc"><code class="docutils literal notranslate"><span class="pre">Question.desc</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.get_type_display"><code class="docutils literal notranslate"><span class="pre">Question.get_type_display()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.id"><code class="docutils literal notranslate"><span class="pre">Question.id</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.objects"><code class="docutils literal notranslate"><span class="pre">Question.objects</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.options"><code class="docutils literal notranslate"><span class="pre">Question.options</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.save"><code class="docutils literal notranslate"><span class="pre">Question.save()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.type"><code class="docutils literal notranslate"><span class="pre">Question.type</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.voting"><code class="docutils literal notranslate"><span class="pre">Question.voting</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.yesno_options"><code class="docutils literal notranslate"><span class="pre">Question.yesno_options</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOption"><code class="docutils literal notranslate"><span class="pre">QuestionOption</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOption.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">QuestionOption.DoesNotExist</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOption.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">QuestionOption.MultipleObjectsReturned</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOption.id"><code class="docutils literal notranslate"><span class="pre">QuestionOption.id</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOption.number"><code class="docutils literal notranslate"><span class="pre">QuestionOption.number</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOption.objects"><code class="docutils literal notranslate"><span class="pre">QuestionOption.objects</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOption.option"><code class="docutils literal notranslate"><span class="pre">QuestionOption.option</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOption.question"><code class="docutils literal notranslate"><span class="pre">QuestionOption.question</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOption.question_id"><code class="docutils literal notranslate"><span class="pre">QuestionOption.question_id</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOption.save"><code class="docutils literal notranslate"><span class="pre">QuestionOption.save()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOptionYesNo"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNo</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOptionYesNo.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNo.DoesNotExist</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOptionYesNo.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNo.MultipleObjectsReturned</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOptionYesNo.id"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNo.id</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOptionYesNo.number"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNo.number</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOptionYesNo.objects"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNo.objects</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOptionYesNo.option"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNo.option</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOptionYesNo.question"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNo.question</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOptionYesNo.question_id"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNo.question_id</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOptionYesNo.save"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNo.save()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting"><code class="docutils literal notranslate"><span class="pre">Voting</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Voting.DoesNotExist</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Voting.MultipleObjectsReturned</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.auths"><code class="docutils literal notranslate"><span class="pre">Voting.auths</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.create_pubkey"><code class="docutils literal notranslate"><span class="pre">Voting.create_pubkey()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.desc"><code class="docutils literal notranslate"><span class="pre">Voting.desc</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.do_postproc"><code class="docutils literal notranslate"><span class="pre">Voting.do_postproc()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.end_date"><code class="docutils literal notranslate"><span class="pre">Voting.end_date</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.get_votes"><code class="docutils literal notranslate"><span class="pre">Voting.get_votes()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.id"><code class="docutils literal notranslate"><span class="pre">Voting.id</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.name"><code class="docutils literal notranslate"><span class="pre">Voting.name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.objects"><code class="docutils literal notranslate"><span class="pre">Voting.objects</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.postproc"><code class="docutils literal notranslate"><span class="pre">Voting.postproc</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.pub_key"><code class="docutils literal notranslate"><span class="pre">Voting.pub_key</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.pub_key_id"><code class="docutils literal notranslate"><span class="pre">Voting.pub_key_id</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.question"><code class="docutils literal notranslate"><span class="pre">Voting.question</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.question_id"><code class="docutils literal notranslate"><span class="pre">Voting.question_id</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.start_date"><code class="docutils literal notranslate"><span class="pre">Voting.start_date</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.tally"><code class="docutils literal notranslate"><span class="pre">Voting.tally</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.tally_votes"><code class="docutils literal notranslate"><span class="pre">Voting.tally_votes()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-voting.views">views.py</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingUpdate"><code class="docutils literal notranslate"><span class="pre">VotingUpdate</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingUpdate.filter_backends"><code class="docutils literal notranslate"><span class="pre">VotingUpdate.filter_backends</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingUpdate.permission_classes"><code class="docutils literal notranslate"><span class="pre">VotingUpdate.permission_classes</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingUpdate.put"><code class="docutils literal notranslate"><span class="pre">VotingUpdate.put()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingUpdate.queryset"><code class="docutils literal notranslate"><span class="pre">VotingUpdate.queryset</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingUpdate.serializer_class"><code class="docutils literal notranslate"><span class="pre">VotingUpdate.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingView"><code class="docutils literal notranslate"><span class="pre">VotingView</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingView.filter_backends"><code class="docutils literal notranslate"><span class="pre">VotingView.filter_backends</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingView.filterset_fields"><code class="docutils literal notranslate"><span class="pre">VotingView.filterset_fields</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingView.get"><code class="docutils literal notranslate"><span class="pre">VotingView.get()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingView.post"><code class="docutils literal notranslate"><span class="pre">VotingView.post()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingView.queryset"><code class="docutils literal notranslate"><span class="pre">VotingView.queryset</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingView.serializer_class"><code class="docutils literal notranslate"><span class="pre">VotingView.serializer_class</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forms-py">forms.py</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-voting.serializers">serializers.py</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionOptionSerializer"><code class="docutils literal notranslate"><span class="pre">QuestionOptionSerializer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionOptionSerializer.Meta"><code class="docutils literal notranslate"><span class="pre">QuestionOptionSerializer.Meta</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionOptionSerializer.Meta.fields"><code class="docutils literal notranslate"><span class="pre">QuestionOptionSerializer.Meta.fields</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionOptionSerializer.Meta.model"><code class="docutils literal notranslate"><span class="pre">QuestionOptionSerializer.Meta.model</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionOptionYesNoSerializer"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNoSerializer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionOptionYesNoSerializer.Meta"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNoSerializer.Meta</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionOptionYesNoSerializer.Meta.fields"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNoSerializer.Meta.fields</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionOptionYesNoSerializer.Meta.model"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNoSerializer.Meta.model</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionSerializer"><code class="docutils literal notranslate"><span class="pre">QuestionSerializer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionSerializer.Meta"><code class="docutils literal notranslate"><span class="pre">QuestionSerializer.Meta</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionSerializer.Meta.fields"><code class="docutils literal notranslate"><span class="pre">QuestionSerializer.Meta.fields</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionSerializer.Meta.model"><code class="docutils literal notranslate"><span class="pre">QuestionSerializer.Meta.model</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionSerializer.get_options"><code class="docutils literal notranslate"><span class="pre">QuestionSerializer.get_options()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.SimpleVotingSerializer"><code class="docutils literal notranslate"><span class="pre">SimpleVotingSerializer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.SimpleVotingSerializer.Meta"><code class="docutils literal notranslate"><span class="pre">SimpleVotingSerializer.Meta</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.SimpleVotingSerializer.Meta.fields"><code class="docutils literal notranslate"><span class="pre">SimpleVotingSerializer.Meta.fields</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.SimpleVotingSerializer.Meta.model"><code class="docutils literal notranslate"><span class="pre">SimpleVotingSerializer.Meta.model</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.VotingSerializer"><code class="docutils literal notranslate"><span class="pre">VotingSerializer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.VotingSerializer.Meta"><code class="docutils literal notranslate"><span class="pre">VotingSerializer.Meta</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.VotingSerializer.Meta.fields"><code class="docutils literal notranslate"><span class="pre">VotingSerializer.Meta.fields</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.VotingSerializer.Meta.model"><code class="docutils literal notranslate"><span class="pre">VotingSerializer.Meta.model</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-voting.filters">filters.py</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.filters.StartedFilter"><code class="docutils literal notranslate"><span class="pre">StartedFilter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.filters.StartedFilter.lookups"><code class="docutils literal notranslate"><span class="pre">StartedFilter.lookups()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.filters.StartedFilter.parameter_name"><code class="docutils literal notranslate"><span class="pre">StartedFilter.parameter_name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.filters.StartedFilter.queryset"><code class="docutils literal notranslate"><span class="pre">StartedFilter.queryset()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.filters.StartedFilter.title"><code class="docutils literal notranslate"><span class="pre">StartedFilter.title</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signals-py">signals.py</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks-py">tasks.py</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utils-py">utils.py</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-voting.tests">tests.py</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.LogInErrorTests"><code class="docutils literal notranslate"><span class="pre">LogInErrorTests</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.LogInErrorTests.passwordWrongLogIn"><code class="docutils literal notranslate"><span class="pre">LogInErrorTests.passwordWrongLogIn()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.LogInErrorTests.setUp"><code class="docutils literal notranslate"><span class="pre">LogInErrorTests.setUp()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.LogInErrorTests.tearDown"><code class="docutils literal notranslate"><span class="pre">LogInErrorTests.tearDown()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.LogInErrorTests.usernameWrongLogIn"><code class="docutils literal notranslate"><span class="pre">LogInErrorTests.usernameWrongLogIn()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.LogInSuccessTests"><code class="docutils literal notranslate"><span class="pre">LogInSuccessTests</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.LogInSuccessTests.setUp"><code class="docutils literal notranslate"><span class="pre">LogInSuccessTests.setUp()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.LogInSuccessTests.successLogIn"><code class="docutils literal notranslate"><span class="pre">LogInSuccessTests.successLogIn()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.LogInSuccessTests.tearDown"><code class="docutils literal notranslate"><span class="pre">LogInSuccessTests.tearDown()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.setUp"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.setUp()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.tearDown"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.tearDown()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question_option"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question_option()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question_option_comment_error_str"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question_option_comment_error_str()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question_option_error"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question_option_error()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question_option_error_str"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question_option_error_str()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question_option_to_string"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question_option_to_string()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question_option_yesno"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question_option_yesno()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question_option_yesno_error"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question_option_yesno_error()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question_option_yesno_error_str"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question_option_yesno_error_str()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question_option_yesno_to_string"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question_option_yesno_to_string()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question_to_string"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question_to_string()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionsTests"><code class="docutils literal notranslate"><span class="pre">QuestionsTests</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionsTests.createCensusEmptyError"><code class="docutils literal notranslate"><span class="pre">QuestionsTests.createCensusEmptyError()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionsTests.createClassicQuestionSuccess"><code class="docutils literal notranslate"><span class="pre">QuestionsTests.createClassicQuestionSuccess()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionsTests.setUp"><code class="docutils literal notranslate"><span class="pre">QuestionsTests.setUp()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionsTests.tearDown"><code class="docutils literal notranslate"><span class="pre">QuestionsTests.tearDown()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase"><code class="docutils literal notranslate"><span class="pre">VotingTestCase</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.create_classic_voting"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.create_classic_voting()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.create_comment_voting"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.create_comment_voting()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.create_multiple_choice_voting"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.create_multiple_choice_voting()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.create_voters"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.create_voters()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.create_yesno_voting"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.create_yesno_voting()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.encrypt_msg"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.encrypt_msg()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.get_or_create_user"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.get_or_create_user()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.setUp"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.setUp()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.store_classic_votes"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.store_classic_votes()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.store_multiple_choice_votes"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.store_multiple_choice_votes()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.store_yesno_votes"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.store_yesno_votes()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.tearDown"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.tearDown()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.test_complete_comment_voting"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.test_complete_comment_voting()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.test_complete_multiple_choice_voting"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.test_complete_multiple_choice_voting()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.test_complete_voting"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.test_complete_voting()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.test_complete_yesno_voting"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.test_complete_yesno_voting()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.test_create_multiple_choice_voting_from_api"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.test_create_multiple_choice_voting_from_api()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.test_create_voting_from_api"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.test_create_voting_from_api()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.test_create_voting_from_api_comment"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.test_create_voting_from_api_comment()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.test_update_voting"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.test_update_voting()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tests-selenium-py">tests_selenium.py</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-configurator-selenium-py">test_configurator_selenium.py</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="voting-module">
+<h1>Voting Module<a class="headerlink" href="#voting-module" title="Permalink to this heading">#</a></h1>
+<p>The Voting module contains several components including models, views, forms, and more. Below is the documentation for each of these components.</p>
+<section id="module-voting.admin">
+<span id="admin-py"></span><h2>admin.py<a class="headerlink" href="#module-voting.admin" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.admin.QuestionAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">voting.admin.</span></span><span class="sig-name descname"><span class="pre">QuestionAdmin</span></span><a class="reference internal" href="../_modules/voting/admin.html#QuestionAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.admin.QuestionAdmin" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.admin.QuestionAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('desc',</span> <span class="pre">'type')</span></em><a class="headerlink" href="#voting.admin.QuestionAdmin.list_display" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="voting.admin.QuestionAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#voting.admin.QuestionAdmin.media" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.admin.QuestionOptionYesNoAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">voting.admin.</span></span><span class="sig-name descname"><span class="pre">QuestionOptionYesNoAdmin</span></span><a class="reference internal" href="../_modules/voting/admin.html#QuestionOptionYesNoAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.admin.QuestionOptionYesNoAdmin" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.admin.QuestionOptionYesNoAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('question',</span> <span class="pre">'number',</span> <span class="pre">'option')</span></em><a class="headerlink" href="#voting.admin.QuestionOptionYesNoAdmin.list_display" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="voting.admin.QuestionOptionYesNoAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#voting.admin.QuestionOptionYesNoAdmin.media" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.admin.VotingAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">voting.admin.</span></span><span class="sig-name descname"><span class="pre">VotingAdmin</span></span><a class="reference internal" href="../_modules/voting/admin.html#VotingAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.admin.VotingAdmin" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.admin.VotingAdmin.actions">
+<span class="sig-name descname"><span class="pre">actions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;function</span> <span class="pre">start&gt;,</span> <span class="pre">&lt;function</span> <span class="pre">stop&gt;,</span> <span class="pre">&lt;function</span> <span class="pre">tally&gt;]</span></em><a class="headerlink" href="#voting.admin.VotingAdmin.actions" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.admin.VotingAdmin.date_hierarchy">
+<span class="sig-name descname"><span class="pre">date_hierarchy</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'start_date'</span></em><a class="headerlink" href="#voting.admin.VotingAdmin.date_hierarchy" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.admin.VotingAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',</span> <span class="pre">'start_date',</span> <span class="pre">'end_date')</span></em><a class="headerlink" href="#voting.admin.VotingAdmin.list_display" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.admin.VotingAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;class</span> <span class="pre">'voting.filters.StartedFilter'&gt;,)</span></em><a class="headerlink" href="#voting.admin.VotingAdmin.list_filter" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="voting.admin.VotingAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#voting.admin.VotingAdmin.media" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.admin.VotingAdmin.readonly_fields">
+<span class="sig-name descname"><span class="pre">readonly_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('start_date',</span> <span class="pre">'end_date',</span> <span class="pre">'pub_key',</span> <span class="pre">'tally',</span> <span class="pre">'postproc')</span></em><a class="headerlink" href="#voting.admin.VotingAdmin.readonly_fields" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.admin.VotingAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',)</span></em><a class="headerlink" href="#voting.admin.VotingAdmin.search_fields" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="voting.admin.start">
+<span class="sig-prename descclassname"><span class="pre">voting.admin.</span></span><span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modeladmin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queryset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/admin.html#start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.admin.start" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="voting.admin.stop">
+<span class="sig-prename descclassname"><span class="pre">voting.admin.</span></span><span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ModelAdmin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queryset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/admin.html#stop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.admin.stop" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="voting.admin.tally">
+<span class="sig-prename descclassname"><span class="pre">voting.admin.</span></span><span class="sig-name descname"><span class="pre">tally</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ModelAdmin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queryset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/admin.html#tally"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.admin.tally" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-voting.models">
+<span id="models-py"></span><h2>models.py<a class="headerlink" href="#module-voting.models" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.models.Question">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">voting.models.</span></span><span class="sig-name descname"><span class="pre">Question</span></span><a class="reference internal" href="../_modules/voting/models.html#Question"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.models.Question" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Question(id, desc, type)</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="voting.models.Question.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#voting.models.Question.DoesNotExist" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="voting.models.Question.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#voting.models.Question.MultipleObjectsReturned" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Question.TYPES">
+<span class="sig-name descname"><span class="pre">TYPES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('C',</span> <span class="pre">'Classic</span> <span class="pre">question'),</span> <span class="pre">('Y',</span> <span class="pre">'Yes/No</span> <span class="pre">question'),</span> <span class="pre">('M',</span> <span class="pre">'Multiple</span> <span class="pre">choice</span> <span class="pre">question'),</span> <span class="pre">('T',</span> <span class="pre">'Text</span> <span class="pre">question')]</span></em><a class="headerlink" href="#voting.models.Question.TYPES" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Question.desc">
+<span class="sig-name descname"><span class="pre">desc</span></span><a class="headerlink" href="#voting.models.Question.desc" title="Permalink to this definition">#</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.models.Question.get_type_display">
+<span class="sig-name descname"><span class="pre">get_type_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.CharField:</span> <span class="pre">type&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#voting.models.Question.get_type_display" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Question.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#voting.models.Question.id" title="Permalink to this definition">#</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Question.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#voting.models.Question.objects" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Question.options">
+<span class="sig-name descname"><span class="pre">options</span></span><a class="headerlink" href="#voting.models.Question.options" title="Permalink to this definition">#</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.models.Question.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/models.html#Question.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.models.Question.save" title="Permalink to this definition">#</a></dt>
+<dd><p>Save the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The ‘force_insert’ and ‘force_update’ parameters can be used to insist
+that the “save” must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Question.type">
+<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#voting.models.Question.type" title="Permalink to this definition">#</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Question.voting">
+<span class="sig-name descname"><span class="pre">voting</span></span><a class="headerlink" href="#voting.models.Question.voting" title="Permalink to this definition">#</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Question.yesno_options">
+<span class="sig-name descname"><span class="pre">yesno_options</span></span><a class="headerlink" href="#voting.models.Question.yesno_options" title="Permalink to this definition">#</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.models.QuestionOption">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">voting.models.</span></span><span class="sig-name descname"><span class="pre">QuestionOption</span></span><a class="reference internal" href="../_modules/voting/models.html#QuestionOption"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.models.QuestionOption" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>QuestionOption(id, question, number, option)</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="voting.models.QuestionOption.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#voting.models.QuestionOption.DoesNotExist" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="voting.models.QuestionOption.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#voting.models.QuestionOption.MultipleObjectsReturned" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.QuestionOption.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#voting.models.QuestionOption.id" title="Permalink to this definition">#</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.QuestionOption.number">
+<span class="sig-name descname"><span class="pre">number</span></span><a class="headerlink" href="#voting.models.QuestionOption.number" title="Permalink to this definition">#</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.QuestionOption.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#voting.models.QuestionOption.objects" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.QuestionOption.option">
+<span class="sig-name descname"><span class="pre">option</span></span><a class="headerlink" href="#voting.models.QuestionOption.option" title="Permalink to this definition">#</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.QuestionOption.question">
+<span class="sig-name descname"><span class="pre">question</span></span><a class="headerlink" href="#voting.models.QuestionOption.question" title="Permalink to this definition">#</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.QuestionOption.question_id">
+<span class="sig-name descname"><span class="pre">question_id</span></span><a class="headerlink" href="#voting.models.QuestionOption.question_id" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.models.QuestionOption.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/models.html#QuestionOption.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.models.QuestionOption.save" title="Permalink to this definition">#</a></dt>
+<dd><p>Save the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The ‘force_insert’ and ‘force_update’ parameters can be used to insist
+that the “save” must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.models.QuestionOptionYesNo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">voting.models.</span></span><span class="sig-name descname"><span class="pre">QuestionOptionYesNo</span></span><a class="reference internal" href="../_modules/voting/models.html#QuestionOptionYesNo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.models.QuestionOptionYesNo" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>QuestionOptionYesNo(id, question, number, option)</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="voting.models.QuestionOptionYesNo.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#voting.models.QuestionOptionYesNo.DoesNotExist" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="voting.models.QuestionOptionYesNo.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#voting.models.QuestionOptionYesNo.MultipleObjectsReturned" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.QuestionOptionYesNo.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#voting.models.QuestionOptionYesNo.id" title="Permalink to this definition">#</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.QuestionOptionYesNo.number">
+<span class="sig-name descname"><span class="pre">number</span></span><a class="headerlink" href="#voting.models.QuestionOptionYesNo.number" title="Permalink to this definition">#</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.QuestionOptionYesNo.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#voting.models.QuestionOptionYesNo.objects" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.QuestionOptionYesNo.option">
+<span class="sig-name descname"><span class="pre">option</span></span><a class="headerlink" href="#voting.models.QuestionOptionYesNo.option" title="Permalink to this definition">#</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.QuestionOptionYesNo.question">
+<span class="sig-name descname"><span class="pre">question</span></span><a class="headerlink" href="#voting.models.QuestionOptionYesNo.question" title="Permalink to this definition">#</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.QuestionOptionYesNo.question_id">
+<span class="sig-name descname"><span class="pre">question_id</span></span><a class="headerlink" href="#voting.models.QuestionOptionYesNo.question_id" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.models.QuestionOptionYesNo.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/models.html#QuestionOptionYesNo.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.models.QuestionOptionYesNo.save" title="Permalink to this definition">#</a></dt>
+<dd><p>Save the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The ‘force_insert’ and ‘force_update’ parameters can be used to insist
+that the “save” must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.models.Voting">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">voting.models.</span></span><span class="sig-name descname"><span class="pre">Voting</span></span><a class="reference internal" href="../_modules/voting/models.html#Voting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.models.Voting" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Voting(id, name, desc, question, start_date, end_date, pub_key, tally, postproc)</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="voting.models.Voting.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#voting.models.Voting.DoesNotExist" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="voting.models.Voting.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#voting.models.Voting.MultipleObjectsReturned" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Voting.auths">
+<span class="sig-name descname"><span class="pre">auths</span></span><a class="headerlink" href="#voting.models.Voting.auths" title="Permalink to this definition">#</a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.models.Voting.create_pubkey">
+<span class="sig-name descname"><span class="pre">create_pubkey</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/models.html#Voting.create_pubkey"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.models.Voting.create_pubkey" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Voting.desc">
+<span class="sig-name descname"><span class="pre">desc</span></span><a class="headerlink" href="#voting.models.Voting.desc" title="Permalink to this definition">#</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.models.Voting.do_postproc">
+<span class="sig-name descname"><span class="pre">do_postproc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/models.html#Voting.do_postproc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.models.Voting.do_postproc" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Voting.end_date">
+<span class="sig-name descname"><span class="pre">end_date</span></span><a class="headerlink" href="#voting.models.Voting.end_date" title="Permalink to this definition">#</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.models.Voting.get_votes">
+<span class="sig-name descname"><span class="pre">get_votes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/models.html#Voting.get_votes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.models.Voting.get_votes" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Voting.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#voting.models.Voting.id" title="Permalink to this definition">#</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Voting.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#voting.models.Voting.name" title="Permalink to this definition">#</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Voting.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#voting.models.Voting.objects" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Voting.postproc">
+<span class="sig-name descname"><span class="pre">postproc</span></span><a class="headerlink" href="#voting.models.Voting.postproc" title="Permalink to this definition">#</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Voting.pub_key">
+<span class="sig-name descname"><span class="pre">pub_key</span></span><a class="headerlink" href="#voting.models.Voting.pub_key" title="Permalink to this definition">#</a></dt>
+<dd><p>Accessor to the related object on the forward side of a one-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Restaurant</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="n">OneToOneField</span><span class="p">(</span><span class="n">Place</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;restaurant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Restaurant.place</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardOneToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Voting.pub_key_id">
+<span class="sig-name descname"><span class="pre">pub_key_id</span></span><a class="headerlink" href="#voting.models.Voting.pub_key_id" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Voting.question">
+<span class="sig-name descname"><span class="pre">question</span></span><a class="headerlink" href="#voting.models.Voting.question" title="Permalink to this definition">#</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Voting.question_id">
+<span class="sig-name descname"><span class="pre">question_id</span></span><a class="headerlink" href="#voting.models.Voting.question_id" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Voting.start_date">
+<span class="sig-name descname"><span class="pre">start_date</span></span><a class="headerlink" href="#voting.models.Voting.start_date" title="Permalink to this definition">#</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.models.Voting.tally">
+<span class="sig-name descname"><span class="pre">tally</span></span><a class="headerlink" href="#voting.models.Voting.tally" title="Permalink to this definition">#</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.models.Voting.tally_votes">
+<span class="sig-name descname"><span class="pre">tally_votes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/models.html#Voting.tally_votes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.models.Voting.tally_votes" title="Permalink to this definition">#</a></dt>
+<dd><p>The tally is a shuffle and then a decrypt</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-voting.views">
+<span id="views-py"></span><h2>views.py<a class="headerlink" href="#module-voting.views" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.views.VotingUpdate">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">voting.views.</span></span><span class="sig-name descname"><span class="pre">VotingUpdate</span></span><a class="reference internal" href="../_modules/voting/views.html#VotingUpdate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.views.VotingUpdate" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">RetrieveUpdateDestroyAPIView</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.views.VotingUpdate.filter_backends">
+<span class="sig-name descname"><span class="pre">filter_backends</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;class</span> <span class="pre">'django_filters.rest_framework.backends.DjangoFilterBackend'&gt;,)</span></em><a class="headerlink" href="#voting.views.VotingUpdate.filter_backends" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.views.VotingUpdate.permission_classes">
+<span class="sig-name descname"><span class="pre">permission_classes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;class</span> <span class="pre">'base.perms.UserIsStaff'&gt;,)</span></em><a class="headerlink" href="#voting.views.VotingUpdate.permission_classes" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.views.VotingUpdate.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">voting_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwars</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/views.html#VotingUpdate.put"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.views.VotingUpdate.put" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.views.VotingUpdate.queryset">
+<span class="sig-name descname"><span class="pre">queryset</span></span><a class="headerlink" href="#voting.views.VotingUpdate.queryset" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.views.VotingUpdate.serializer_class">
+<span class="sig-name descname"><span class="pre">serializer_class</span></span><a class="headerlink" href="#voting.views.VotingUpdate.serializer_class" title="Permalink to this definition">#</a></dt>
+<dd><p>alias of <a class="reference internal" href="#voting.serializers.VotingSerializer" title="voting.serializers.VotingSerializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">VotingSerializer</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.views.VotingView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">voting.views.</span></span><span class="sig-name descname"><span class="pre">VotingView</span></span><a class="reference internal" href="../_modules/voting/views.html#VotingView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.views.VotingView" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ListCreateAPIView</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.views.VotingView.filter_backends">
+<span class="sig-name descname"><span class="pre">filter_backends</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;class</span> <span class="pre">'django_filters.rest_framework.backends.DjangoFilterBackend'&gt;,)</span></em><a class="headerlink" href="#voting.views.VotingView.filter_backends" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.views.VotingView.filterset_fields">
+<span class="sig-name descname"><span class="pre">filterset_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('id',)</span></em><a class="headerlink" href="#voting.views.VotingView.filterset_fields" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.views.VotingView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/views.html#VotingView.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.views.VotingView.get" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.views.VotingView.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/views.html#VotingView.post"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.views.VotingView.post" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.views.VotingView.queryset">
+<span class="sig-name descname"><span class="pre">queryset</span></span><a class="headerlink" href="#voting.views.VotingView.queryset" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.views.VotingView.serializer_class">
+<span class="sig-name descname"><span class="pre">serializer_class</span></span><a class="headerlink" href="#voting.views.VotingView.serializer_class" title="Permalink to this definition">#</a></dt>
+<dd><p>alias of <a class="reference internal" href="#voting.serializers.VotingSerializer" title="voting.serializers.VotingSerializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">VotingSerializer</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="forms-py">
+<h2>forms.py<a class="headerlink" href="#forms-py" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="module-voting.serializers">
+<span id="serializers-py"></span><h2>serializers.py<a class="headerlink" href="#module-voting.serializers" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.serializers.QuestionOptionSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">voting.serializers.</span></span><span class="sig-name descname"><span class="pre">QuestionOptionSerializer</span></span><a class="reference internal" href="../_modules/voting/serializers.html#QuestionOptionSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.serializers.QuestionOptionSerializer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">HyperlinkedModelSerializer</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.serializers.QuestionOptionSerializer.Meta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta</span></span><a class="reference internal" href="../_modules/voting/serializers.html#QuestionOptionSerializer.Meta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.serializers.QuestionOptionSerializer.Meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.serializers.QuestionOptionSerializer.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('number',</span> <span class="pre">'option')</span></em><a class="headerlink" href="#voting.serializers.QuestionOptionSerializer.Meta.fields" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.serializers.QuestionOptionSerializer.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#voting.serializers.QuestionOptionSerializer.Meta.model" title="Permalink to this definition">#</a></dt>
+<dd><p>alias of <a class="reference internal" href="#voting.models.QuestionOption" title="voting.models.QuestionOption"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuestionOption</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.serializers.QuestionOptionYesNoSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">voting.serializers.</span></span><span class="sig-name descname"><span class="pre">QuestionOptionYesNoSerializer</span></span><a class="reference internal" href="../_modules/voting/serializers.html#QuestionOptionYesNoSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.serializers.QuestionOptionYesNoSerializer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">HyperlinkedModelSerializer</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.serializers.QuestionOptionYesNoSerializer.Meta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta</span></span><a class="reference internal" href="../_modules/voting/serializers.html#QuestionOptionYesNoSerializer.Meta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.serializers.QuestionOptionYesNoSerializer.Meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.serializers.QuestionOptionYesNoSerializer.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('number',</span> <span class="pre">'option')</span></em><a class="headerlink" href="#voting.serializers.QuestionOptionYesNoSerializer.Meta.fields" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.serializers.QuestionOptionYesNoSerializer.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#voting.serializers.QuestionOptionYesNoSerializer.Meta.model" title="Permalink to this definition">#</a></dt>
+<dd><p>alias of <a class="reference internal" href="#voting.models.QuestionOptionYesNo" title="voting.models.QuestionOptionYesNo"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuestionOptionYesNo</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.serializers.QuestionSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">voting.serializers.</span></span><span class="sig-name descname"><span class="pre">QuestionSerializer</span></span><a class="reference internal" href="../_modules/voting/serializers.html#QuestionSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.serializers.QuestionSerializer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">HyperlinkedModelSerializer</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.serializers.QuestionSerializer.Meta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta</span></span><a class="reference internal" href="../_modules/voting/serializers.html#QuestionSerializer.Meta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.serializers.QuestionSerializer.Meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.serializers.QuestionSerializer.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('desc',</span> <span class="pre">'options',</span> <span class="pre">'type')</span></em><a class="headerlink" href="#voting.serializers.QuestionSerializer.Meta.fields" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.serializers.QuestionSerializer.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#voting.serializers.QuestionSerializer.Meta.model" title="Permalink to this definition">#</a></dt>
+<dd><p>alias of <a class="reference internal" href="#voting.models.Question" title="voting.models.Question"><code class="xref py py-class docutils literal notranslate"><span class="pre">Question</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.serializers.QuestionSerializer.get_options">
+<span class="sig-name descname"><span class="pre">get_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/serializers.html#QuestionSerializer.get_options"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.serializers.QuestionSerializer.get_options" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.serializers.SimpleVotingSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">voting.serializers.</span></span><span class="sig-name descname"><span class="pre">SimpleVotingSerializer</span></span><a class="reference internal" href="../_modules/voting/serializers.html#SimpleVotingSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.serializers.SimpleVotingSerializer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">HyperlinkedModelSerializer</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.serializers.SimpleVotingSerializer.Meta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta</span></span><a class="reference internal" href="../_modules/voting/serializers.html#SimpleVotingSerializer.Meta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.serializers.SimpleVotingSerializer.Meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.serializers.SimpleVotingSerializer.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',</span> <span class="pre">'desc',</span> <span class="pre">'question',</span> <span class="pre">'start_date',</span> <span class="pre">'end_date')</span></em><a class="headerlink" href="#voting.serializers.SimpleVotingSerializer.Meta.fields" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.serializers.SimpleVotingSerializer.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#voting.serializers.SimpleVotingSerializer.Meta.model" title="Permalink to this definition">#</a></dt>
+<dd><p>alias of <a class="reference internal" href="#voting.models.Voting" title="voting.models.Voting"><code class="xref py py-class docutils literal notranslate"><span class="pre">Voting</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.serializers.VotingSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">voting.serializers.</span></span><span class="sig-name descname"><span class="pre">VotingSerializer</span></span><a class="reference internal" href="../_modules/voting/serializers.html#VotingSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.serializers.VotingSerializer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">HyperlinkedModelSerializer</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.serializers.VotingSerializer.Meta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta</span></span><a class="reference internal" href="../_modules/voting/serializers.html#VotingSerializer.Meta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.serializers.VotingSerializer.Meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.serializers.VotingSerializer.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('id',</span> <span class="pre">'name',</span> <span class="pre">'desc',</span> <span class="pre">'question',</span> <span class="pre">'start_date',</span> <span class="pre">'end_date',</span> <span class="pre">'pub_key',</span> <span class="pre">'auths',</span> <span class="pre">'tally',</span> <span class="pre">'postproc')</span></em><a class="headerlink" href="#voting.serializers.VotingSerializer.Meta.fields" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.serializers.VotingSerializer.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#voting.serializers.VotingSerializer.Meta.model" title="Permalink to this definition">#</a></dt>
+<dd><p>alias of <a class="reference internal" href="#voting.models.Voting" title="voting.models.Voting"><code class="xref py py-class docutils literal notranslate"><span class="pre">Voting</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-voting.filters">
+<span id="filters-py"></span><h2>filters.py<a class="headerlink" href="#module-voting.filters" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.filters.StartedFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">voting.filters.</span></span><span class="sig-name descname"><span class="pre">StartedFilter</span></span><a class="reference internal" href="../_modules/voting/filters.html#StartedFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.filters.StartedFilter" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleListFilter</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.filters.StartedFilter.lookups">
+<span class="sig-name descname"><span class="pre">lookups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_admin</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/filters.html#StartedFilter.lookups"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.filters.StartedFilter.lookups" title="Permalink to this definition">#</a></dt>
+<dd><p>Must be overridden to return a list of tuples (value, verbose value)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.filters.StartedFilter.parameter_name">
+<span class="sig-name descname"><span class="pre">parameter_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'started'</span></em><a class="headerlink" href="#voting.filters.StartedFilter.parameter_name" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.filters.StartedFilter.queryset">
+<span class="sig-name descname"><span class="pre">queryset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queryset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/filters.html#StartedFilter.queryset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.filters.StartedFilter.queryset" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the filtered queryset.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="voting.filters.StartedFilter.title">
+<span class="sig-name descname"><span class="pre">title</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'started'</span></em><a class="headerlink" href="#voting.filters.StartedFilter.title" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="signals-py">
+<h2>signals.py<a class="headerlink" href="#signals-py" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="tasks-py">
+<h2>tasks.py<a class="headerlink" href="#tasks-py" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="utils-py">
+<h2>utils.py<a class="headerlink" href="#utils-py" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="module-voting.tests">
+<span id="tests-py"></span><h2>tests.py<a class="headerlink" href="#module-voting.tests" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.tests.LogInErrorTests">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">voting.tests.</span></span><span class="sig-name descname"><span class="pre">LogInErrorTests</span></span><a class="reference internal" href="../_modules/voting/tests.html#LogInErrorTests"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.LogInErrorTests" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StaticLiveServerTestCase</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.LogInErrorTests.passwordWrongLogIn">
+<span class="sig-name descname"><span class="pre">passwordWrongLogIn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#LogInErrorTests.passwordWrongLogIn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.LogInErrorTests.passwordWrongLogIn" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.LogInErrorTests.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#LogInErrorTests.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.LogInErrorTests.setUp" title="Permalink to this definition">#</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.LogInErrorTests.tearDown">
+<span class="sig-name descname"><span class="pre">tearDown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#LogInErrorTests.tearDown"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.LogInErrorTests.tearDown" title="Permalink to this definition">#</a></dt>
+<dd><p>Hook method for deconstructing the test fixture after testing it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.LogInErrorTests.usernameWrongLogIn">
+<span class="sig-name descname"><span class="pre">usernameWrongLogIn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#LogInErrorTests.usernameWrongLogIn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.LogInErrorTests.usernameWrongLogIn" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.tests.LogInSuccessTests">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">voting.tests.</span></span><span class="sig-name descname"><span class="pre">LogInSuccessTests</span></span><a class="reference internal" href="../_modules/voting/tests.html#LogInSuccessTests"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.LogInSuccessTests" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StaticLiveServerTestCase</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.LogInSuccessTests.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#LogInSuccessTests.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.LogInSuccessTests.setUp" title="Permalink to this definition">#</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.LogInSuccessTests.successLogIn">
+<span class="sig-name descname"><span class="pre">successLogIn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#LogInSuccessTests.successLogIn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.LogInSuccessTests.successLogIn" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.LogInSuccessTests.tearDown">
+<span class="sig-name descname"><span class="pre">tearDown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#LogInSuccessTests.tearDown"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.LogInSuccessTests.tearDown" title="Permalink to this definition">#</a></dt>
+<dd><p>Hook method for deconstructing the test fixture after testing it.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.tests.QuestionTestCases">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">voting.tests.</span></span><span class="sig-name descname"><span class="pre">QuestionTestCases</span></span><a class="reference internal" href="../_modules/voting/tests.html#QuestionTestCases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.QuestionTestCases" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseTestCase</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.QuestionTestCases.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#QuestionTestCases.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.QuestionTestCases.setUp" title="Permalink to this definition">#</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.QuestionTestCases.tearDown">
+<span class="sig-name descname"><span class="pre">tearDown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#QuestionTestCases.tearDown"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.QuestionTestCases.tearDown" title="Permalink to this definition">#</a></dt>
+<dd><p>Hook method for deconstructing the test fixture after testing it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.QuestionTestCases.test_question">
+<span class="sig-name descname"><span class="pre">test_question</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#QuestionTestCases.test_question"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.QuestionTestCases.test_question" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.QuestionTestCases.test_question_option">
+<span class="sig-name descname"><span class="pre">test_question_option</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#QuestionTestCases.test_question_option"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.QuestionTestCases.test_question_option" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.QuestionTestCases.test_question_option_comment_error_str">
+<span class="sig-name descname"><span class="pre">test_question_option_comment_error_str</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#QuestionTestCases.test_question_option_comment_error_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.QuestionTestCases.test_question_option_comment_error_str" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.QuestionTestCases.test_question_option_error">
+<span class="sig-name descname"><span class="pre">test_question_option_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#QuestionTestCases.test_question_option_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.QuestionTestCases.test_question_option_error" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.QuestionTestCases.test_question_option_error_str">
+<span class="sig-name descname"><span class="pre">test_question_option_error_str</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#QuestionTestCases.test_question_option_error_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.QuestionTestCases.test_question_option_error_str" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.QuestionTestCases.test_question_option_to_string">
+<span class="sig-name descname"><span class="pre">test_question_option_to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#QuestionTestCases.test_question_option_to_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.QuestionTestCases.test_question_option_to_string" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.QuestionTestCases.test_question_option_yesno">
+<span class="sig-name descname"><span class="pre">test_question_option_yesno</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#QuestionTestCases.test_question_option_yesno"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.QuestionTestCases.test_question_option_yesno" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.QuestionTestCases.test_question_option_yesno_error">
+<span class="sig-name descname"><span class="pre">test_question_option_yesno_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#QuestionTestCases.test_question_option_yesno_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.QuestionTestCases.test_question_option_yesno_error" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.QuestionTestCases.test_question_option_yesno_error_str">
+<span class="sig-name descname"><span class="pre">test_question_option_yesno_error_str</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#QuestionTestCases.test_question_option_yesno_error_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.QuestionTestCases.test_question_option_yesno_error_str" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.QuestionTestCases.test_question_option_yesno_to_string">
+<span class="sig-name descname"><span class="pre">test_question_option_yesno_to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#QuestionTestCases.test_question_option_yesno_to_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.QuestionTestCases.test_question_option_yesno_to_string" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.QuestionTestCases.test_question_to_string">
+<span class="sig-name descname"><span class="pre">test_question_to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#QuestionTestCases.test_question_to_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.QuestionTestCases.test_question_to_string" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.tests.QuestionsTests">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">voting.tests.</span></span><span class="sig-name descname"><span class="pre">QuestionsTests</span></span><a class="reference internal" href="../_modules/voting/tests.html#QuestionsTests"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.QuestionsTests" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StaticLiveServerTestCase</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.QuestionsTests.createCensusEmptyError">
+<span class="sig-name descname"><span class="pre">createCensusEmptyError</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#QuestionsTests.createCensusEmptyError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.QuestionsTests.createCensusEmptyError" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.QuestionsTests.createClassicQuestionSuccess">
+<span class="sig-name descname"><span class="pre">createClassicQuestionSuccess</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#QuestionsTests.createClassicQuestionSuccess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.QuestionsTests.createClassicQuestionSuccess" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.QuestionsTests.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#QuestionsTests.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.QuestionsTests.setUp" title="Permalink to this definition">#</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.QuestionsTests.tearDown">
+<span class="sig-name descname"><span class="pre">tearDown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#QuestionsTests.tearDown"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.QuestionsTests.tearDown" title="Permalink to this definition">#</a></dt>
+<dd><p>Hook method for deconstructing the test fixture after testing it.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">voting.tests.</span></span><span class="sig-name descname"><span class="pre">VotingTestCase</span></span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseTestCase</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase.create_classic_voting">
+<span class="sig-name descname"><span class="pre">create_classic_voting</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase.create_classic_voting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase.create_classic_voting" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase.create_comment_voting">
+<span class="sig-name descname"><span class="pre">create_comment_voting</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase.create_comment_voting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase.create_comment_voting" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase.create_multiple_choice_voting">
+<span class="sig-name descname"><span class="pre">create_multiple_choice_voting</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase.create_multiple_choice_voting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase.create_multiple_choice_voting" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase.create_voters">
+<span class="sig-name descname"><span class="pre">create_voters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase.create_voters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase.create_voters" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase.create_yesno_voting">
+<span class="sig-name descname"><span class="pre">create_yesno_voting</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase.create_yesno_voting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase.create_yesno_voting" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase.encrypt_msg">
+<span class="sig-name descname"><span class="pre">encrypt_msg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase.encrypt_msg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase.encrypt_msg" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase.get_or_create_user">
+<span class="sig-name descname"><span class="pre">get_or_create_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase.get_or_create_user"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase.get_or_create_user" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase.setUp" title="Permalink to this definition">#</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase.store_classic_votes">
+<span class="sig-name descname"><span class="pre">store_classic_votes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase.store_classic_votes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase.store_classic_votes" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase.store_multiple_choice_votes">
+<span class="sig-name descname"><span class="pre">store_multiple_choice_votes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase.store_multiple_choice_votes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase.store_multiple_choice_votes" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase.store_yesno_votes">
+<span class="sig-name descname"><span class="pre">store_yesno_votes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase.store_yesno_votes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase.store_yesno_votes" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase.tearDown">
+<span class="sig-name descname"><span class="pre">tearDown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase.tearDown"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase.tearDown" title="Permalink to this definition">#</a></dt>
+<dd><p>Hook method for deconstructing the test fixture after testing it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase.test_complete_comment_voting">
+<span class="sig-name descname"><span class="pre">test_complete_comment_voting</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase.test_complete_comment_voting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase.test_complete_comment_voting" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase.test_complete_multiple_choice_voting">
+<span class="sig-name descname"><span class="pre">test_complete_multiple_choice_voting</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase.test_complete_multiple_choice_voting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase.test_complete_multiple_choice_voting" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase.test_complete_voting">
+<span class="sig-name descname"><span class="pre">test_complete_voting</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase.test_complete_voting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase.test_complete_voting" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase.test_complete_yesno_voting">
+<span class="sig-name descname"><span class="pre">test_complete_yesno_voting</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase.test_complete_yesno_voting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase.test_complete_yesno_voting" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase.test_create_multiple_choice_voting_from_api">
+<span class="sig-name descname"><span class="pre">test_create_multiple_choice_voting_from_api</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase.test_create_multiple_choice_voting_from_api"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase.test_create_multiple_choice_voting_from_api" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase.test_create_voting_from_api">
+<span class="sig-name descname"><span class="pre">test_create_voting_from_api</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase.test_create_voting_from_api"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase.test_create_voting_from_api" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase.test_create_voting_from_api_comment">
+<span class="sig-name descname"><span class="pre">test_create_voting_from_api_comment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase.test_create_voting_from_api_comment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase.test_create_voting_from_api_comment" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="voting.tests.VotingTestCase.test_update_voting">
+<span class="sig-name descname"><span class="pre">test_update_voting</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/voting/tests.html#VotingTestCase.test_update_voting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#voting.tests.VotingTestCase.test_update_voting" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="tests-selenium-py">
+<h2>tests_selenium.py<a class="headerlink" href="#tests-selenium-py" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="test-configurator-selenium-py">
+<h2>test_configurator_selenium.py<a class="headerlink" href="#test-configurator-selenium-py" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="visualizer.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Visualizer Module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../memes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Memes collection</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-voting.admin">admin.py</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.QuestionAdmin"><code class="docutils literal notranslate"><span class="pre">QuestionAdmin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.QuestionAdmin.list_display"><code class="docutils literal notranslate"><span class="pre">QuestionAdmin.list_display</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.QuestionAdmin.media"><code class="docutils literal notranslate"><span class="pre">QuestionAdmin.media</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.QuestionOptionYesNoAdmin"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNoAdmin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.QuestionOptionYesNoAdmin.list_display"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNoAdmin.list_display</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.QuestionOptionYesNoAdmin.media"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNoAdmin.media</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.VotingAdmin"><code class="docutils literal notranslate"><span class="pre">VotingAdmin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.VotingAdmin.actions"><code class="docutils literal notranslate"><span class="pre">VotingAdmin.actions</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.VotingAdmin.date_hierarchy"><code class="docutils literal notranslate"><span class="pre">VotingAdmin.date_hierarchy</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.VotingAdmin.list_display"><code class="docutils literal notranslate"><span class="pre">VotingAdmin.list_display</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.VotingAdmin.list_filter"><code class="docutils literal notranslate"><span class="pre">VotingAdmin.list_filter</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.VotingAdmin.media"><code class="docutils literal notranslate"><span class="pre">VotingAdmin.media</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.VotingAdmin.readonly_fields"><code class="docutils literal notranslate"><span class="pre">VotingAdmin.readonly_fields</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.VotingAdmin.search_fields"><code class="docutils literal notranslate"><span class="pre">VotingAdmin.search_fields</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.start"><code class="docutils literal notranslate"><span class="pre">start()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.stop"><code class="docutils literal notranslate"><span class="pre">stop()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.admin.tally"><code class="docutils literal notranslate"><span class="pre">tally()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-voting.models">models.py</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question"><code class="docutils literal notranslate"><span class="pre">Question</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Question.DoesNotExist</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Question.MultipleObjectsReturned</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.TYPES"><code class="docutils literal notranslate"><span class="pre">Question.TYPES</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.desc"><code class="docutils literal notranslate"><span class="pre">Question.desc</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.get_type_display"><code class="docutils literal notranslate"><span class="pre">Question.get_type_display()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.id"><code class="docutils literal notranslate"><span class="pre">Question.id</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.objects"><code class="docutils literal notranslate"><span class="pre">Question.objects</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.options"><code class="docutils literal notranslate"><span class="pre">Question.options</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.save"><code class="docutils literal notranslate"><span class="pre">Question.save()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.type"><code class="docutils literal notranslate"><span class="pre">Question.type</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.voting"><code class="docutils literal notranslate"><span class="pre">Question.voting</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Question.yesno_options"><code class="docutils literal notranslate"><span class="pre">Question.yesno_options</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOption"><code class="docutils literal notranslate"><span class="pre">QuestionOption</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOption.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">QuestionOption.DoesNotExist</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOption.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">QuestionOption.MultipleObjectsReturned</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOption.id"><code class="docutils literal notranslate"><span class="pre">QuestionOption.id</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOption.number"><code class="docutils literal notranslate"><span class="pre">QuestionOption.number</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOption.objects"><code class="docutils literal notranslate"><span class="pre">QuestionOption.objects</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOption.option"><code class="docutils literal notranslate"><span class="pre">QuestionOption.option</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOption.question"><code class="docutils literal notranslate"><span class="pre">QuestionOption.question</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOption.question_id"><code class="docutils literal notranslate"><span class="pre">QuestionOption.question_id</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOption.save"><code class="docutils literal notranslate"><span class="pre">QuestionOption.save()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOptionYesNo"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNo</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOptionYesNo.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNo.DoesNotExist</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOptionYesNo.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNo.MultipleObjectsReturned</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOptionYesNo.id"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNo.id</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOptionYesNo.number"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNo.number</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOptionYesNo.objects"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNo.objects</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOptionYesNo.option"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNo.option</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOptionYesNo.question"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNo.question</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOptionYesNo.question_id"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNo.question_id</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.QuestionOptionYesNo.save"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNo.save()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting"><code class="docutils literal notranslate"><span class="pre">Voting</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Voting.DoesNotExist</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Voting.MultipleObjectsReturned</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.auths"><code class="docutils literal notranslate"><span class="pre">Voting.auths</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.create_pubkey"><code class="docutils literal notranslate"><span class="pre">Voting.create_pubkey()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.desc"><code class="docutils literal notranslate"><span class="pre">Voting.desc</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.do_postproc"><code class="docutils literal notranslate"><span class="pre">Voting.do_postproc()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.end_date"><code class="docutils literal notranslate"><span class="pre">Voting.end_date</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.get_votes"><code class="docutils literal notranslate"><span class="pre">Voting.get_votes()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.id"><code class="docutils literal notranslate"><span class="pre">Voting.id</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.name"><code class="docutils literal notranslate"><span class="pre">Voting.name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.objects"><code class="docutils literal notranslate"><span class="pre">Voting.objects</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.postproc"><code class="docutils literal notranslate"><span class="pre">Voting.postproc</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.pub_key"><code class="docutils literal notranslate"><span class="pre">Voting.pub_key</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.pub_key_id"><code class="docutils literal notranslate"><span class="pre">Voting.pub_key_id</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.question"><code class="docutils literal notranslate"><span class="pre">Voting.question</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.question_id"><code class="docutils literal notranslate"><span class="pre">Voting.question_id</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.start_date"><code class="docutils literal notranslate"><span class="pre">Voting.start_date</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.tally"><code class="docutils literal notranslate"><span class="pre">Voting.tally</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.models.Voting.tally_votes"><code class="docutils literal notranslate"><span class="pre">Voting.tally_votes()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-voting.views">views.py</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingUpdate"><code class="docutils literal notranslate"><span class="pre">VotingUpdate</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingUpdate.filter_backends"><code class="docutils literal notranslate"><span class="pre">VotingUpdate.filter_backends</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingUpdate.permission_classes"><code class="docutils literal notranslate"><span class="pre">VotingUpdate.permission_classes</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingUpdate.put"><code class="docutils literal notranslate"><span class="pre">VotingUpdate.put()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingUpdate.queryset"><code class="docutils literal notranslate"><span class="pre">VotingUpdate.queryset</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingUpdate.serializer_class"><code class="docutils literal notranslate"><span class="pre">VotingUpdate.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingView"><code class="docutils literal notranslate"><span class="pre">VotingView</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingView.filter_backends"><code class="docutils literal notranslate"><span class="pre">VotingView.filter_backends</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingView.filterset_fields"><code class="docutils literal notranslate"><span class="pre">VotingView.filterset_fields</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingView.get"><code class="docutils literal notranslate"><span class="pre">VotingView.get()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingView.post"><code class="docutils literal notranslate"><span class="pre">VotingView.post()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingView.queryset"><code class="docutils literal notranslate"><span class="pre">VotingView.queryset</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.views.VotingView.serializer_class"><code class="docutils literal notranslate"><span class="pre">VotingView.serializer_class</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forms-py">forms.py</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-voting.serializers">serializers.py</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionOptionSerializer"><code class="docutils literal notranslate"><span class="pre">QuestionOptionSerializer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionOptionSerializer.Meta"><code class="docutils literal notranslate"><span class="pre">QuestionOptionSerializer.Meta</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionOptionSerializer.Meta.fields"><code class="docutils literal notranslate"><span class="pre">QuestionOptionSerializer.Meta.fields</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionOptionSerializer.Meta.model"><code class="docutils literal notranslate"><span class="pre">QuestionOptionSerializer.Meta.model</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionOptionYesNoSerializer"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNoSerializer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionOptionYesNoSerializer.Meta"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNoSerializer.Meta</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionOptionYesNoSerializer.Meta.fields"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNoSerializer.Meta.fields</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionOptionYesNoSerializer.Meta.model"><code class="docutils literal notranslate"><span class="pre">QuestionOptionYesNoSerializer.Meta.model</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionSerializer"><code class="docutils literal notranslate"><span class="pre">QuestionSerializer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionSerializer.Meta"><code class="docutils literal notranslate"><span class="pre">QuestionSerializer.Meta</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionSerializer.Meta.fields"><code class="docutils literal notranslate"><span class="pre">QuestionSerializer.Meta.fields</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionSerializer.Meta.model"><code class="docutils literal notranslate"><span class="pre">QuestionSerializer.Meta.model</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.QuestionSerializer.get_options"><code class="docutils literal notranslate"><span class="pre">QuestionSerializer.get_options()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.SimpleVotingSerializer"><code class="docutils literal notranslate"><span class="pre">SimpleVotingSerializer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.SimpleVotingSerializer.Meta"><code class="docutils literal notranslate"><span class="pre">SimpleVotingSerializer.Meta</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.SimpleVotingSerializer.Meta.fields"><code class="docutils literal notranslate"><span class="pre">SimpleVotingSerializer.Meta.fields</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.SimpleVotingSerializer.Meta.model"><code class="docutils literal notranslate"><span class="pre">SimpleVotingSerializer.Meta.model</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.VotingSerializer"><code class="docutils literal notranslate"><span class="pre">VotingSerializer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.VotingSerializer.Meta"><code class="docutils literal notranslate"><span class="pre">VotingSerializer.Meta</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.VotingSerializer.Meta.fields"><code class="docutils literal notranslate"><span class="pre">VotingSerializer.Meta.fields</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.serializers.VotingSerializer.Meta.model"><code class="docutils literal notranslate"><span class="pre">VotingSerializer.Meta.model</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-voting.filters">filters.py</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.filters.StartedFilter"><code class="docutils literal notranslate"><span class="pre">StartedFilter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.filters.StartedFilter.lookups"><code class="docutils literal notranslate"><span class="pre">StartedFilter.lookups()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.filters.StartedFilter.parameter_name"><code class="docutils literal notranslate"><span class="pre">StartedFilter.parameter_name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.filters.StartedFilter.queryset"><code class="docutils literal notranslate"><span class="pre">StartedFilter.queryset()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.filters.StartedFilter.title"><code class="docutils literal notranslate"><span class="pre">StartedFilter.title</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signals-py">signals.py</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks-py">tasks.py</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utils-py">utils.py</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-voting.tests">tests.py</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.LogInErrorTests"><code class="docutils literal notranslate"><span class="pre">LogInErrorTests</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.LogInErrorTests.passwordWrongLogIn"><code class="docutils literal notranslate"><span class="pre">LogInErrorTests.passwordWrongLogIn()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.LogInErrorTests.setUp"><code class="docutils literal notranslate"><span class="pre">LogInErrorTests.setUp()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.LogInErrorTests.tearDown"><code class="docutils literal notranslate"><span class="pre">LogInErrorTests.tearDown()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.LogInErrorTests.usernameWrongLogIn"><code class="docutils literal notranslate"><span class="pre">LogInErrorTests.usernameWrongLogIn()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.LogInSuccessTests"><code class="docutils literal notranslate"><span class="pre">LogInSuccessTests</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.LogInSuccessTests.setUp"><code class="docutils literal notranslate"><span class="pre">LogInSuccessTests.setUp()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.LogInSuccessTests.successLogIn"><code class="docutils literal notranslate"><span class="pre">LogInSuccessTests.successLogIn()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.LogInSuccessTests.tearDown"><code class="docutils literal notranslate"><span class="pre">LogInSuccessTests.tearDown()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.setUp"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.setUp()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.tearDown"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.tearDown()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question_option"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question_option()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question_option_comment_error_str"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question_option_comment_error_str()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question_option_error"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question_option_error()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question_option_error_str"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question_option_error_str()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question_option_to_string"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question_option_to_string()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question_option_yesno"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question_option_yesno()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question_option_yesno_error"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question_option_yesno_error()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question_option_yesno_error_str"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question_option_yesno_error_str()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question_option_yesno_to_string"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question_option_yesno_to_string()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionTestCases.test_question_to_string"><code class="docutils literal notranslate"><span class="pre">QuestionTestCases.test_question_to_string()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionsTests"><code class="docutils literal notranslate"><span class="pre">QuestionsTests</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionsTests.createCensusEmptyError"><code class="docutils literal notranslate"><span class="pre">QuestionsTests.createCensusEmptyError()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionsTests.createClassicQuestionSuccess"><code class="docutils literal notranslate"><span class="pre">QuestionsTests.createClassicQuestionSuccess()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionsTests.setUp"><code class="docutils literal notranslate"><span class="pre">QuestionsTests.setUp()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.QuestionsTests.tearDown"><code class="docutils literal notranslate"><span class="pre">QuestionsTests.tearDown()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase"><code class="docutils literal notranslate"><span class="pre">VotingTestCase</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.create_classic_voting"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.create_classic_voting()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.create_comment_voting"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.create_comment_voting()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.create_multiple_choice_voting"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.create_multiple_choice_voting()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.create_voters"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.create_voters()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.create_yesno_voting"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.create_yesno_voting()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.encrypt_msg"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.encrypt_msg()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.get_or_create_user"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.get_or_create_user()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.setUp"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.setUp()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.store_classic_votes"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.store_classic_votes()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.store_multiple_choice_votes"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.store_multiple_choice_votes()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.store_yesno_votes"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.store_yesno_votes()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.tearDown"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.tearDown()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.test_complete_comment_voting"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.test_complete_comment_voting()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.test_complete_multiple_choice_voting"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.test_complete_multiple_choice_voting()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.test_complete_voting"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.test_complete_voting()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.test_complete_yesno_voting"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.test_complete_yesno_voting()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.test_create_multiple_choice_voting_from_api"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.test_create_multiple_choice_voting_from_api()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.test_create_voting_from_api"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.test_create_voting_from_api()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.test_create_voting_from_api_comment"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.test_create_voting_from_api_comment()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#voting.tests.VotingTestCase.test_update_voting"><code class="docutils literal notranslate"><span class="pre">VotingTestCase.test_update_voting()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tests-selenium-py">tests_selenium.py</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-configurator-selenium-py">test_configurator_selenium.py</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alejandro Medina Durán, Gonzalo Campos Mejías
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023, Alejandro Medina Durán, Gonzalo Campos Mejías.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
