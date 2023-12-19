@@ -7,6 +7,10 @@ on:
       - main
     paths-ignore:
       - 'doc/**'
+  workflow_call:
+    secrets:
+      CODACY_PROJECT_TOKEN:
+        required: true
 
 jobs:
   build:
