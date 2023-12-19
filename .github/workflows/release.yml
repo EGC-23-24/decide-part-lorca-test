@@ -3,14 +3,14 @@ name: release
 on:
   push: 
     tags:
-      - '1.0.0'
+      - '*'
 
 permissions:
   contents: write
 
 jobs:
   buildTest:
-    uses: EGC-23-24/decide-part-lorca/.github/workflows/django.yml@main
+    uses: EGC-23-24/decide-part-lorca-test/.github/workflows/django.yml@main
     secrets: 
       CODACY_PROJECT_TOKEN: ${{secrets.CODACY_PROJECT_TOKEN}}
      
