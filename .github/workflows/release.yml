@@ -15,7 +15,6 @@ jobs:
       CODACY_PROJECT_TOKEN: ${{secrets.CODACY_PROJECT_TOKEN}}
      
   release:
-    needs: buildTest
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
